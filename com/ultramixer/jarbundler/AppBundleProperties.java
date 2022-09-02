@@ -246,6 +246,8 @@ public class AppBundleProperties {
 	}
 
 	public String getCFBundleName() {
+		
+		System.out.println("test issue created");
 		if (mCFBundleName == null)
 			return getApplicationName();
 
