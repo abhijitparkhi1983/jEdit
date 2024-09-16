@@ -39,6 +39,17 @@ public class Install
 		return mySource.toString().contains("!");		
 	}
 	
+	private static boolean isRunningFromExclam123()
+	{
+		Class me = Install.class;
+		ProtectionDomain domaine = me.getProtectionDomain();
+		CodeSource source = domaine.getCodeSource();
+		URL mySource = source.getLocation();
+		// In fact the check is more restrictive than required :
+		// a problem occurs only when the ! is at the end of directory
+		return mySource.toString().contains("!");		
+	}
+	
 	private static void errorAndExit(boolean isGUI, String message)
 	{
 		if(isGUI)
